@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Калькулятор мать тваю</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="img/xxd.jpg" alt="" width="45px" height="45px">
+        <h2 id="logoword">universal web<br> calculator</h2>
+      </div>
+      <nav>
+        <button class="nav_button" type="button" value="zero" name="button" id="" onclick="">standart</button>
+        <button class="nav_button" type="button" value="one" name="button" id="" onclick="">engineering</button>
+        <button class="nav_button" type="button" value="two" name="button" id="" onclick="">linear equations</button>
+        <button class="nav_button" type="button" value="three" name="button" id="" onclick="">square equations</button>
+      </nav>
+    </header>
+
+      <div class="calc" id="calc">
+        <div class="fullDisplay" id="fullDisplay">
+          <input type="text" id="topDisplay" value='' disabled style="text-align:right">
+          <input type="text" id="bottomDisplay" name="" value="0" disabled style="text-align:right">
+        </div>
+        <div class="body" id="body">
+          <table>
+            <tr>
+              <td><button class="button ingener" id="pow" type="button" name="button" onclick="powPress(this)">x&sup2;</button></td>
+              <td><button class="button" id="back" type="button" name="back_buton" class="clear" onclick="backPress(this)">&#8592;</button></td>
+              <td><button class="button" id="delete" type="button" name="delete_buton" class="clear" onclick="deletePress(this)">c</button></td>
+              <td><button class="button brack" type="button" value="(" name="bracket_buton" onclick="">(</button></td>
+              <td><button class="button brack" type="button" value=")" name="bracket_buton" onclick="">)</button></td>
+              <td><button class="button ingener" id="persent" type="button" name="button" onclick="persentPress(this)">%</button></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td><button class="button ingener" type="button" name="button" onclick="sqrtPress(this)">&#8730;x</button></td>
+              <td><button class="button number seven" type="button" value="7" name="number_buton" onclick="">7</button></td>
+              <td><button class="button number eight" type="button" value="8" name="number_buton" onclick="">8</button></td>
+              <td><button class="button number nine" type="button" value="9" name="number_buton" onclick="">9</button></td>
+              <td><button class="button operation" type="button" value="+" name="operation_button" onclick="">+</button></td>
+              <td><button class="button ingener" type="button" name="button" onclick="piPress(this)">&pi;</button></td>
+            </tr>
+            <tr>
+              <td><button class="button ingener" type="button" name="button" onclick="lnPress(this)">ln</button></td>
+              <td><button class="button number four" type="button" value="4" name="number_buton" onclick="">4</button></td>
+              <td><button class="button number five" type="button" value="5" name="number_buton" onclick="">5</button></td>
+              <td><button class="button number six" type="button" value="6" name="number_buton" onclick="">6</button></td>
+              <td><button class="button operation" type="button" value="-" name="operation_button" onclick="">-</button></td>
+              <td><button class="button ingener" type="button" name="button" onclick="ePress(this)">e</button></td>
+            </tr>
+            <tr>
+              <td><button class="button ingener" type="button" name="button" onclick="log2Press(this)">log<sub>2</sub></button></td>
+              <td><button class="button number one" type="button" value="1" name="number_buton" onclick="">1</button></td>
+              <td><button class="button number two" type="button" value="2" name="number_buton" onclick="">2</button></td>
+              <td><button class="button number thee" type="button" value="3" name="number_buton" onclick="">3</button></td>
+              <td><button class="button operation" type="button" value="*" name="operation_button" onclick="">&times;</button></td>
+              <td><button class="button ingener" type="button" name="button" onclick="randPress(this)">rand</button></td>
+            </tr>
+            <tr>
+              <td><button class="button ingener" type="button" name="button" onclick="log10Press(this)">log<sub>10</sub></button></td>
+              <td><button class="button" id="decimal" type="button" value="." onclick="decimalPress(this)">.</button></td>
+              <td><button class="button number zero" type="button" value="0" name="number_buton" onclick="">0</button></td>
+              <td><button class="button" id="result" type="button" onclick="resultBtn(this)">=</button></td>
+              <td><button class="button operation" type="button" value="/" name="operation_button" onclick="">&divide;</button></td>
+              <td><button class="button ingener" type="button" name="button" onclick="factorialPress(this)">n!</button></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
+      <div class="" id="linear">
+        <form name="linearniFunkce" >
+           <div class="okraj">
+             <h2 id="h2">Вигляд: ax+b=c</h2>
+             <h3 id="error1">Введіть змінні</h3>
+             <div id="rovnice">
+               <input class="inp" type="tel" value="" name="a" id="a"> <span class="prom">x</span> +
+               <input class="inp" type="tel" value="" name="b" id="b"> <span id="" >=</span> <input class="inp" type="tel" value="" name="c" id="c"><br>
+             </div>
+             <p id="rounding">Округлити до <input class="inp" type="tel" name="desMista" value="1" class="desMista" id="d"> знаків після коми</p>
+           <div class="okraj">
+            <div class="tlacitka">
+              <input class="res" type="button" value="Розрахуй" id="linera_result" onclick="linera_resultPress(this)">
+              <input class="res" type="button" value="Видали зміст">
+            </div>
+            <div id="square">
+              <span class="prom" id="prom">x</span> = <input disabled type="text" class="vysl" name="vysledek" value="" id="fin1">
+            </div>
+           </div>
+         </form>
+      </div>
+
+
+
+    <script src="index.js"></script>
+  </body>
+</html>
